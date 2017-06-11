@@ -1,16 +1,14 @@
 var PuzzleMakerScript = require("puzzlemakerscript");
 
-    PuzzleMakerScript.init(5,5);
+    PuzzleMakerScript.init(9,9);
+    
+    PuzzleMakerScript.show();
+    
+    PuzzleMakerScript.set(0,0,"s");
+    PuzzleMakerScript.set(8,7,"p");
+    
+    PuzzleMakerScript.show();
 
-    PuzzleMakerScript.create(1,0,"SHELDON",success,failure);
-    
-    function success() {
-        console.log("success");
-        
-        PuzzleMakerScript.show();
-    
-    }
-    function failure() {
-        console.log("fail");
-    }
+
+
     
