@@ -1,22 +1,11 @@
-//
-// # SimpleServer // lostwords start 6 10 17
-//
-// A simple chat server using Socket.IO, Express, and Async.
-//
-var http = require('http');
 
+var http = require('http');
 var path = require('path');
 
 var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
 
-//
-// ## SimpleServer `SimpleServer(obj)`
-//
-// Creates a new instance of SimpleServer with the following options:
-//  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
-//
 var router = express();
 var server = http.createServer(router);
 var io = socketio.listen(server);
@@ -32,11 +21,8 @@ var GERMAN=[];
 var SPANISH=[];
 
 function startUpServer() {
-  
   console.log("Server started...");
-  
   getDictionary();
-
   console.log("Startup completed...");
 }
 
@@ -68,17 +54,13 @@ function getDictionary() {
     GERMAN = data.split(/\n/);
     console.log(GERMAN.length);
   });  
-
 }
 
 function isValidWord(word) {
-  
   var isValid="";
-
   if (ENGLISH.indexOf(word)>-1) isValid += " ENGLISH ";
     if (SPANISH.indexOf(word)>-1) isValid += " SPANISH ";
       if (GERMAN.indexOf(word)>-1) isValid += " GERMAN ";
-
   return isValid;
 
 }
