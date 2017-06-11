@@ -24,8 +24,11 @@ var GERMAN=[];
 var SPANISH=[];
 
 function startUpServer() {
+  
   console.log("Server started...");
+  
   getDictionary();
+  
   console.log("Startup completed...");
 }
 
