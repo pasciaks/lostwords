@@ -2,8 +2,15 @@ var PuzzleMakerScript = require("puzzlemakerscript");
 
     PuzzleMakerScript.init(5,5);
 
-    PuzzleMakerScript.set(1,1,"S");
-    PuzzleMakerScript.set(2,2,"E");
-    PuzzleMakerScript.set(2,3,"X");  
+    PuzzleMakerScript.create(1,0,"SHELDON",success,failure);
     
-    PuzzleMakerScript.show();
+    function success() {
+        console.log("success");
+        
+        PuzzleMakerScript.show();
+    
+    }
+    function failure() {
+        console.log("fail");
+    }
+    
