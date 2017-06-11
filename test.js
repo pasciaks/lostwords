@@ -7,10 +7,12 @@ var PuzzleMakerScript = require("puzzlemakerscript");
 PuzzleMakerScript.init(15,15);
 
     var wordList=["SMART","SIGN","CAT","DOG","PIZZA","CAR","TREE"];
+    
+    var howManyTimes = 5;
 
         for (var i=0;i<wordList.length;i++) {
             
-         console.log(PuzzleMakerScript.addWord(wordList[i]));
+         console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes));
          
         }
     
