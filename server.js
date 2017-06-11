@@ -15,6 +15,8 @@ router.use(express.static(path.resolve(__dirname, 'client')));
 var messages = [];
 var sockets = [];
 
+var pms = require("puzzlemakerscript"); pms.init(5,5,function(done){console.log(done)});
+
 var fs=require("fs");
 
 var ENGLISH=[];
