@@ -62,29 +62,17 @@ function tryit(sx, sy, dx, dy, word, howmany) {
 
 }
 
-PuzzleMakerScript.init(18,18);
+PuzzleMakerScript.init(15,15);
 
-var words = 0;
-
-for (var j=0;j<99;j++) {
+for (var ji=0;ji<12;ji++) {
     
-words = 0;
+    var words = 0;
+    
+    for (var i = 0; i < 999; i++) {
+        doit("AMANDA", 1);
+    }
+    
 
-for (var i = 0; i < 99; i++) {
-    doit("SHELDON", 99);
-}
-
-//console.log("words hidden:" + words);
-
-words = 0;
-
-for (var i = 0; i < 99; i++) {
-    doit("AMANDA", 99);
-}
-
-//console.log("words hidden:" + words);
-
-}
-
+}   
 
 PuzzleMakerScript.show();
