@@ -4,18 +4,33 @@
 
 var PuzzleMakerScript = require("puzzlemakerscript");
 
-PuzzleMakerScript.init(15,15);
+function example1() {
 
-    var wordList=["SMART","SIGN","CAT","DOG","PIZZA","CAR","TREE"];
-    
-    var howManyTimes = 5;
+    PuzzleMakerScript.init(15,15);
+        var wordList=["SMART","SIGN","CAT","DOG","PIZZA","CAR","TREE"];
+        var howManyTimes = 1;
+            for (var i=0;i<wordList.length;i++) {
+             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes,1,1));  //set directions
+             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes,-1,1));  
+             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes,1,-1));  
+             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes,-1,-1));  
+            }
+    PuzzleMakerScript.fillBlanks(' ');
+    PuzzleMakerScript.show();
+}
 
-        for (var i=0;i<wordList.length;i++) {
-            
-         console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes));
-         
-        }
-    
-PuzzleMakerScript.fillBlanks('.');
 
-PuzzleMakerScript.show();
+function example2() {
+
+    PuzzleMakerScript.init(15,15);
+        var wordList=["SMART","SIGN","CAT","DOG","PIZZA","CAR","TREE"];
+        var howManyTimes = 5;
+            for (var i=0;i<wordList.length;i++) {
+             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes)); //random directions
+            }
+    PuzzleMakerScript.fillBlanks(' ');
+    PuzzleMakerScript.show();
+}
+
+example1();
+example2();
