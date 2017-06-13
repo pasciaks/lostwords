@@ -26,11 +26,11 @@ function example2() {
         var wordList=["SMART","SIGN","CAT","DOG","PIZZA","CAR","TREE"];
         var howManyTimes = 5;
             for (var i=0;i<wordList.length;i++) {
-             console.log(PuzzleMakerScript.addWord(wordList[i],howManyTimes)); //random directions
+                var results=PuzzleMakerScript.addWord(wordList[i],howManyTimes); //random directions
             }
     PuzzleMakerScript.fillBlanks(' ');
     PuzzleMakerScript.show();
 }
 
-example1();
+//example1();
 example2();
