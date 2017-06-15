@@ -1,4 +1,6 @@
 git add .
-git commit -m " push to git "
+git commit -a " push all to git "
 git push -u origin master
 git status
+git commit -m " do it "
+
