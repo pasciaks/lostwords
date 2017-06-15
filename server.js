@@ -87,6 +87,10 @@ io.on('connection', function (socket) {
       
       console.log(isValidWord(msg));
       
+      var newMessage = isValidWord(msg);
+      
+      if (newMessage!="") newMessage = "{{language(s)}} " + newMessage;
+      
       var text = String(msg || '');
 
       if (!text)
@@ -95,8 +99,12 @@ io.on('connection', function (socket) {
       socket.get('name', function (err, name) {
         var data = {
           name: name,
-          text: text
+          text: text + " " + newMessage
         };
+        
+        if (err) {
+          
+        }
 
         broadcast('message', data);
         messages.push(data);
