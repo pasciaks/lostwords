@@ -1,3 +1,3 @@
-git add -A && git commit -m "Your Message"
+git add -A && git commit -m "script update"
 git push -u origin master
 
