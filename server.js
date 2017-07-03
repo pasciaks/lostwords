@@ -6,6 +6,10 @@ var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
 
+// TODO checking if this works
+
+// todo checking if this works
+
 var router = express();
 var server = http.createServer(router);
 var io = socketio.listen(server);

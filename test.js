@@ -15,7 +15,7 @@ function example1() {
              (PuzzleMakerScript.addWord(wordList[i],howManyTimes,1,-1));  
              (PuzzleMakerScript.addWord(wordList[i],howManyTimes,-1,-1));  
             }
-    PuzzleMakerScript.fillBlanks(PuzzleMakerScript.FillBlanksWith);
+    PuzzleMakerScript.fillBlanks(" ");
     PuzzleMakerScript.show();
 }
 
@@ -25,41 +25,14 @@ function example2() {
     PuzzleMakerScript.emptyChar='.';
     PuzzleMakerScript.init(15,15);
     PuzzleMakerScript.reuseLetters=true;
-    
 
         var wordList=["SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON","SHELDON","AMANDA","AMANDA","SHELDON"];
         var howManyTimes = 1;
             for (var i=0;i<wordList.length;i++) {
                 var results=PuzzleMakerScript.addWord(wordList[i],howManyTimes); //random directions
             }
-    PuzzleMakerScript.fillBlanks(PuzzleMakerScript.emptyChar);//PuzzleMakerScript.emptyChar);
+    PuzzleMakerScript.fillBlanks(" ");//PuzzleMakerScript.emptyChar);
     PuzzleMakerScript.show();
-    
-    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // console.log('this part path creation not done, check todo in index.js');
-    
-    // PuzzleMakerScript.reuseLetters=false;
-    
-    // var sx=PuzzleMakerScript.randSX();
-    // var sy=PuzzleMakerScript.randSY();
-    
-    // var newPath = PuzzleMakerScript.createPath(sx,sy,"AMANDA");
-    
-    // //var thePath = newPath.thePath;
-    
-    // if (newPath.thePath!=='undefined') {
-        
-    // for (var i=0;i<newPath.thePath.length;i++) {
-    //     PuzzleMakerScript.set(newPath.thePath[i].sx,newPath.thePath[i].sy,newPath.thePath[i].letter);
-    // }
-    
-    // }
-    
-    // PuzzleMakerScript.show();
-    
-    // console.log(JSON.stringify(newPath));
-    
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 example1();
