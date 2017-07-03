@@ -37,12 +37,16 @@ function example2() {
 
 function example3() {
     
+    PuzzleMakerScript.allWords=[];
+    
     PuzzleMakerScript.emptyChar='.';
-    PuzzleMakerScript.init(15,15);   
-    PuzzleMakerScript.addWord("sheldon",2); 
+    PuzzleMakerScript.init(15,5);   
+    PuzzleMakerScript.addWord("sheldon",5); 
     PuzzleMakerScript.show();
     
     PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"SHELDON");
+    
+    console.log(PuzzleMakerScript.allWords);
 }
 
 example1();
