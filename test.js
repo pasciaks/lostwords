@@ -35,6 +35,18 @@ function example2() {
     PuzzleMakerScript.show();
 }
 
+function example3() {
+    
+    PuzzleMakerScript.emptyChar='.';
+    PuzzleMakerScript.init(15,15);   
+    PuzzleMakerScript.addWord("sheldon",2); 
+    PuzzleMakerScript.show();
+    
+    PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"SHELDON");
+}
+
 example1();
 
 example2();
+
+example3();
