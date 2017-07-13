@@ -30,27 +30,47 @@ function example2() {
         var howManyTimes = 1;
             for (var i=0;i<wordList.length;i++) {
                 var results=PuzzleMakerScript.addWord(wordList[i],howManyTimes); //random directions
+                //console.log(results);
             }
+            
     PuzzleMakerScript.fillBlanks(" ");//PuzzleMakerScript.emptyChar);
     PuzzleMakerScript.show();
 }
 
 function example3() {
     
-    PuzzleMakerScript.allWords=[];
+    var hidden=[];
     
     PuzzleMakerScript.emptyChar='.';
-    PuzzleMakerScript.init(15,5);   
-    PuzzleMakerScript.addWord("sheldon",5); 
-    PuzzleMakerScript.show();
+    PuzzleMakerScript.init(35,35);   
     
-    PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"SHELDON");
+    //PuzzleMakerScript.addWord("sheldon",1); 
+    //PuzzleMakerScript.show();
     
-    console.log(PuzzleMakerScript.allWords);
+    for (var i=0;i<9999;i++){
+    var objResult =  PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"SHELDON",true,true);
+    // var objResult =  PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"amanda",false);
+    // var objResult =  PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"1234567",false);
+     if (objResult.thePath.length>0) {//console.log(JSON.stringify(objResult));
+     hidden.push(objResult);
+     if (hidden.length>=47) break;
+         
+     }
+    }
+    
+    
+   PuzzleMakerScript.show();
+   console.log(JSON.stringify(hidden.length));
+   
+
 }
 
-example1();
+//example1();
 
-example2();
+//example2();
 
 example3();
+
+// wowo todo   hide every engish word in a big puzzle
+
+//todo verify no two paths in create come back the same
