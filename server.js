@@ -113,13 +113,18 @@ io.on('connection', function (socket) {
         broadcast('message', data);
         messages.push(data);
       });
+      
     });
 
     socket.on('identify', function (name) {
       socket.set('name', String(name || 'Anonymous'), function (err) {
+        if (err) {
+          
+        }        
         updateRoster();
       });
     });
+    
   });
 
 function updateRoster() {
@@ -129,6 +134,9 @@ function updateRoster() {
       socket.get('name', callback);
     },
     function (err, names) {
+        if (err) {
+          
+        }      
       broadcast('roster', names);
     }
   );

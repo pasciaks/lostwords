@@ -25,21 +25,31 @@ function example2() {
     PuzzleMakerScript.emptyChar = '.';
     PuzzleMakerScript.init(15, 15);
     PuzzleMakerScript.reuseLetters = true;
+    
+    var results = [];
 
-    var wordList = ["SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON", "SHELDON", "AMANDA", "AMANDA", "SHELDON"];
+    var obj = {};
+    var wordList = ["SHELDON", "DAYTONA", "SEBASTIAN", "BEACH","SHELDON", "DAYTONA", "SEBASTIAN", "BEACH","SHELDON", "DAYTONA", "SEBASTIAN", "BEACH","SHELDON", "DAYTONA", "SEBASTIAN", "BEACH","SHELDON", "DAYTONA", "SEBASTIAN", "BEACH"];
     var howManyTimes = 1;
-    for (var i = 0; i < wordList.length; i++) {
-        var results = PuzzleMakerScript.addWord(wordList[i], howManyTimes); //random directions
-        //console.log(results);
-    }
 
-    PuzzleMakerScript.fillBlanks(" "); //PuzzleMakerScript.emptyChar);
+    for (var i = 0; i < wordList.length; i++) {
+        
+       // results.push(PuzzleMakerScript.addWord(wordList[i], howManyTimes)); //random directions
+        
+        obj = PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(), PuzzleMakerScript.randSY(), wordList[i], false, true, 0);         
+        //console.log(obj);
+        
+        if (obj.result==true)         results.push(obj);
+    }
+    
+    console.log(results.length + " " + wordList.length);
+
+    PuzzleMakerScript.fillBlanks("."); //PuzzleMakerScript.emptyChar);
     PuzzleMakerScript.show();
+    console.log(JSON.stringify(results));
 }
 
-function example3() {
-    
-    
+function example3(value) {
 
     var hidden = [];
 
@@ -57,7 +67,7 @@ function example3() {
     
     console.log(howmany);
     
-    //howmany=12; // ********* <------- overrides above
+    howmany=12; // ********* <------- overrides above
 
     for (var i = 0; i < 9999; i++) {
         //var objResult =  PuzzleMakerScript.createPath(PuzzleMakerScript.randSX(),PuzzleMakerScript.randSY(),"abcdefghijklm",false,true); 
@@ -80,11 +90,11 @@ function example3() {
 
 }
 
-example1();
+//example1();
 
 example2();
 
-example3();
+//example3();
 
 // wowo todo   hide every engish word in a big puzzle
 
